@@ -1,0 +1,22 @@
+<div id="jstimer">
+  <h5>Time remaining:</h5>
+	<div id="clockdiv">
+	  <span>
+		<span class="minutes"></span>
+		<span class="smalltext">Minutes</span>
+	  </span>
+	  <span>
+		<span class="seconds"></span>
+		<span class="smalltext">Seconds</span>
+	  </span>
+	</div>
+</div>
+
+{% comment %}
+
+  Call your javascript here using {{ }} (and outside of the comment, of course)
+
+{% endcomment %}
+                 {{ 'cart-timer.css' | asset_url | stylesheet_tag }}
+
+                {{ 'cntdn-timer.js' | asset_url | script_tag }}
