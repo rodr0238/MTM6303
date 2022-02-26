@@ -16,12 +16,13 @@
         <div class="grid--full">
           <div class="grid__item post-large--one-half push--post-large--one-half">
             <div class="grid--full">
+               <div class="grid__item one-quarter medium-down--one-third post-large--text-right">
+                <span class="h4">{{ 'cart.label.quantity' | t }}</span>
+              </div>
               <div class="grid__item one-half medium-down--one-third text-right">
                 <span class="h4">{{ 'cart.label.price' | t }}</span>
               </div>
-              <div class="grid__item one-quarter medium-down--one-third post-large--text-right">
-                <span class="h4">{{ 'cart.label.quantity' | t }}</span>
-              </div>
+             
               <div class="grid__item one-quarter medium-down--one-third text-right">
                 <span class="h4">{{ 'cart.label.total' | t }}</span>
               </div>
@@ -119,7 +120,12 @@
 
             <div class="grid__item post-large--one-half">
               <div class="grid--full cart__row--table-large">
-
+				
+                <div class="grid__item one-quarter one-half medium-down--one-third text-center">
+                  <label for="updates_{{ item.key }}" class="cart__mini-labels">{{ 'cart.label.quantity' | t }}</label>
+                  <input type="number" class="cart__quantity-selector" name="updates[]" id="updates_{{ item.key }}" value="{{ item.quantity }}" min="0" aria-label="{{ 'cart.label.quantity' | t }}">
+                </div>
+                
                 <div class="grid__item one-half one-half medium-down--one-third post-large--text-right">
                   <span class="cart__mini-labels">{{ 'cart.label.price' | t }}</span>
                   {%- if item.original_price != item.final_price -%}
@@ -146,10 +152,7 @@
                   {%- endif -%}
                 </div>
 
-                <div class="grid__item one-quarter one-half medium-down--one-third text-center">
-                  <label for="updates_{{ item.key }}" class="cart__mini-labels">{{ 'cart.label.quantity' | t }}</label>
-                  <input type="number" class="cart__quantity-selector" name="updates[]" id="updates_{{ item.key }}" value="{{ item.quantity }}" min="0" aria-label="{{ 'cart.label.quantity' | t }}">
-                </div>
+                
 
                 <div class="grid__item one-quarter one-half medium-down--one-third text-right">
                   <span class="cart__mini-labels">{{ 'cart.label.total' | t }}</span>
@@ -229,13 +232,15 @@
             {%- endcapture -%}
 
             <p class="cart__policies"><em>{{ taxes_shipping_checkout }}</em></p>
-
+			
+           <button type="submit" name="update" class="btn btn--secondary update-cart">{{ 'cart.general.update' | t }}</button>
+          
             {% comment %}
               Continue shopping button
             {% endcomment %}
             <a class="btn btn--secondary" href="{{ routes.all_products_collection_url }}">{{ 'cart.general.continue_shopping' | t }}</a>
 
-            <button type="submit" name="update" class="btn btn--secondary update-cart">{{ 'cart.general.update' | t }}</button>
+           
             <button type="submit" name="checkout" class="btn">{{ 'cart.general.checkout' | t }}</button>
 
             {% if additional_checkout_buttons %}

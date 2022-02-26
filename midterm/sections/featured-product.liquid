@@ -87,6 +87,8 @@
             {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
           {% endunless %}
         </div>
+        
+        <h1 class="product-single__title" itemprop="name">{{ title }}</h1>
 
         {% if section.settings.product_image_zoom_type == 'lightbox' %}
           <ul class="gallery" class="hidden">
@@ -101,7 +103,7 @@
         {% if section.settings.product_vendor_enable %}
           <span class="h3" itemprop="brand">{{ vendor }}</span>
         {% endif %}
-        <h1 class="product-single__title" itemprop="name">{{ title }}</h1>
+        
 
         <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
 

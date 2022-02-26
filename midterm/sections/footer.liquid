@@ -103,11 +103,8 @@
 
         {% when 'newsletter' %}
           <div class="grid__item {{ column_width }}">
-            <h3 class="h4">{{ 'layout.footer.newsletter_title' | t }}</h3>
-            {% unless block.settings.subtext == blank %}
-              {{ block.settings.subtext }}
-            {% endunless %}
-            {% include 'newsletter-form' %}
+            <h3 class="h4">Map</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1401.9899321564308!2d-75.75761304179039!3d45.34921872978905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cce0718cc4a6ad7%3A0xc6cc467725843e2b!2sAlgonquin%20College%20Ottawa%20Campus!5e0!3m2!1sen!2sca!4v1645913020656!5m2!1sen!2sca" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
           </div>
 
       {% endcase %}

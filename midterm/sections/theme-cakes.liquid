@@ -1,0 +1,17 @@
+<div class="wrapper">
+  <img src= "{{ section.settings.image | image_url: width: 1000, height: 300 }}" class="theme-cakes" alt="theme-cakes">
+</div>
+
+{% schema %}
+  {
+    "name": "Banner Image",
+    "settings": [
+{
+	"type": "image_picker",
+	"id": "image",
+	"label": "Banner Image"
+}
+
+]
+  }
+{% endschema %}
